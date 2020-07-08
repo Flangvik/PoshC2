@@ -53,6 +53,34 @@ curl -sSL https://raw.githubusercontent.com/nettitude/PoshC2/master/Install.sh |
 
 Elevated privileges are required as the install script performs `apt` updates and installations.
 
+### Cutting Edge Features
+
+We want to keep the `master` branch stable to ensure that users are able to rely on it when required and for this reason changes can often be feature-complete but not yet present on `master` as they have not been tested completely and signed-off yet.
+
+If you want to look at upcoming features in PoshC2 you can check out the `dev` branch, or any individual feature branches branched off of `dev`.
+
+As features **are** tested before they are merged into `dev` this branch should still be fairly stable and operators can opt in to using this branch or a particular feature branch for their engagement.
+This does trade stablity for new features however so do it at your own discretion.
+
+To use `dev` or a feature branch first clone the repository:
+
+```
+git clone https://github.com/nettitude/PoshC2 /opt/PoshC2
+cd /opt/PoshC2
+```
+
+Then checkout the desired branch:
+
+```
+git checkout dev
+```
+
+Then run the Install script and continue as you would do normally.
+
+```
+sudo ./Install.sh
+```
+
 ### Installing for Docker
 
 You can also run PoshC2 using Docker, this allows more stable and running and enables PoshC2 to easily run on other operating systems.
@@ -74,6 +102,8 @@ wget https://raw.githubusercontent.com/nettitude/PoshC2/master/Install-for-Docke
 chmod +x ./Install-for-Docker.sh
 ./Install-for-Docker.sh
 ```
+
+To use the `dev` or feature branches just choose the branch as described above but run `Install-for-Docker.sh` instead of `Install.sh`.
 
 #### Other OSs
 
@@ -149,15 +179,7 @@ If applying the changes fails, a message will be printed in order to allow the u
 
 You can use an older version of PoshC2 by referencing the appropriate tag. You can list the tags for the repository by issuing:
 
-### Linux Install Python2 - stable but unmaintained
-
-Automatic install for Python2 using curl & bash
-
-```bash
-curl -sSL https://raw.githubusercontent.com/nettitude/PoshC2/python2/Install.sh | bash
-```
-
-### Other tags
+### Tagged versions
 
 ```bash
 git tag --list
@@ -190,13 +212,7 @@ For example:
 git reset --hard v4.8
 ```
 
-However note that this will overwrite any local changes to files, such as Config.py and you may have to re-run the install script for that version or re-setup the environment appropriately.
-
-## Issues / FAQs
-
-If you are experiencing any issues that aren't solved by reading the documentation at https://poshc2.readthedocs.io, please check the open issues tracking page within GitHub. If this page doesn't have what you're looking for please open a new issue or issue a pull request.
-
-If you are looking for tips and tricks on PoshC2 usage and optimisation, you are welcome to join the slack channel below.
+However note that this will overwrite any local changes to files, such as changes to the configuration files, and you may have to re-run the install script for that version or re-setup the environment appropriately.
 
 ## License / Terms of Use
 
